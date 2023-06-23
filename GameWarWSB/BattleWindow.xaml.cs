@@ -24,7 +24,6 @@ namespace GameWarWSB
             this.player = player;
             this.enemy = enemy;
             StartBattle();
-            Close();
         }
         private void StartBattle()
         {
@@ -54,8 +53,6 @@ namespace GameWarWSB
                         MessageBox.Show("Przegrałeś walkę! Gra zakończona.");
                     }
                 }
-
-                startingPlayer = (startingPlayer == 1) ? 2 : 1;
             }
 
          

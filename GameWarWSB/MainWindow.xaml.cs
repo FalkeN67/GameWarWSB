@@ -27,8 +27,7 @@ namespace GameWarWSB
         private void FightButton_Click(object sender, RoutedEventArgs e)
         {
             BattleWindow battleWindow = new BattleWindow(player, enemy);
-            battleWindow.Show();
-            Close();
+            battleWindow.ShowDialog();
         }
 
         private void ShopButton_Click(object sender, RoutedEventArgs e)
