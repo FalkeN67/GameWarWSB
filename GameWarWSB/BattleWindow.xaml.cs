@@ -23,7 +23,8 @@ namespace GameWarWSB
             InitializeComponent();
             this.player = player;
             this.enemy = enemy;
-            StartBattle();
+            DisplayCharacterStats();
+            //StartBattle();
         }
         private void StartBattle()
         {
@@ -54,8 +55,14 @@ namespace GameWarWSB
                     }
                 }
             }
+        }
 
-         
+        private void DisplayCharacterStats()
+        {
+            levelLabel.Content = player.Level.ToString();
+            healthPointsLabel.Content = player.HealthPoints.ToString();
+            damageLabel.Content = player.Damage.ToString();
+            goldLabel.Content = player.Gold.ToString();
         }
     }
 }
