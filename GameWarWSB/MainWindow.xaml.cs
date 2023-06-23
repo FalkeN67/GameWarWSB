@@ -8,9 +8,11 @@ namespace GameWarWSB
         private Shop shop;
         private Enemy enemy;
 
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
             player = new Character();
             enemy = new Enemy(10,10);
             shop = new Shop();
@@ -39,10 +41,21 @@ namespace GameWarWSB
         {
             MessageBox.Show("Nastał nowy dzień...");
         }
-
+        private void CharacterStatsButton_Click(object sender, RoutedEventArgs e)
+        {
+            CharacterStatsWindow statsWindow = new CharacterStatsWindow(player);
+            statsWindow.ShowDialog();
+        }
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
+
+        public int PlayerGameDay
+        {
+            get { return player.gameDay; }
+            set { player.gameDay = value; }
+        }
+
     }
 }
