@@ -8,13 +8,17 @@ namespace GameWarWSB
 {
     public class Enemy : ICombatant
     {
-        public int HealthPoints { get; private set; }
-        public int Damage { get; private set; }
+        public int HealthPoints { get; set; }
+        public int Damage { get; set; }
 
         public Enemy(int healthPoints, int damage)
         {
             HealthPoints = healthPoints;
             Damage = damage;
+        }
+
+        public Enemy()
+        {
         }
 
         public void TakeDamage(int damage)

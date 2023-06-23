@@ -19,6 +19,8 @@ namespace GameWarWSB
             UpdateShopItems();
         }
 
+
+
         private void UpdateShopItems()
         {
             // Wyczyszczenie istniejących elementów w ListView

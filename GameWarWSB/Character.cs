@@ -8,10 +8,10 @@ namespace GameWarWSB
 {
     public class Character : ICombatant
     {
-        public int Level { get; private set; }
-        public int HealthPoints { get; private set; }
-        public int Damage { get; private set; }
-        public int Gold { get; private set; }
+        public int Level { get; set; }
+        public int HealthPoints { get; set; }
+        public int Damage { get; set; }
+        public int Gold { get; set; }
 
         public Character()
         {
