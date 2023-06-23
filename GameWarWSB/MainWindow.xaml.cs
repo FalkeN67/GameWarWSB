@@ -11,7 +11,6 @@ namespace GameWarWSB
         public MainWindow()
         {
             InitializeComponent();
-
             player = new Character();
             enemy = new Enemy(10,10);
             shop = new Shop();

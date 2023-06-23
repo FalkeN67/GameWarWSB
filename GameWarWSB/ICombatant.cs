@@ -10,7 +10,6 @@ namespace GameWarWSB
     {
         int HealthPoints { get; }
         int Damage { get; }
-
         void TakeDamage(int damage);
     }
 }

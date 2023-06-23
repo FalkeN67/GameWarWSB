@@ -37,12 +37,12 @@ namespace GameWarWSB
             weapons.Clear();
 
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 string name = "Weapon " + (i + 1);
                 int damage = random.Next(10, 20);
-                int cost = random.Next(50, 100);
-                int requiredLevel = random.Next(1, 5);
+                int requiredLevel = random.Next(50, 100);
+                int cost = random.Next(1, 4);
 
                 Weapon newWeapon = new Weapon(name, damage, cost, requiredLevel);
                 weapons.Add(newWeapon);
