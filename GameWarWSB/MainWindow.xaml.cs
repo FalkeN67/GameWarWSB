@@ -7,15 +7,16 @@ namespace GameWarWSB
         private Character player;
         private Shop shop;
         private Enemy enemy;
+        public int PlayerGameDay;
 
 
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = this;
+
             player = new Character();
-            enemy = new Enemy(10,10);
             shop = new Shop();
+            enemy = new Enemy(player);
 
             shop.AddWeapon(new Weapon("Miecz", 10, 50, 1));
             shop.AddWeapon(new Weapon("Topór", 15, 75, 2));
@@ -39,6 +40,10 @@ namespace GameWarWSB
         private void SleepButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Nastał nowy dzień...");
+            player.gameDay++;
+            enemy.Level++;
+            enemy.HealthPoints += 100;
+            enemy.Damage += 60;
         }
         private void CharacterStatsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -49,12 +54,5 @@ namespace GameWarWSB
         {
             Close();
         }
-
-        public int PlayerGameDay
-        {
-            get { return player.gameDay; }
-            set { player.gameDay = value; }
-        }
-
     }
 }

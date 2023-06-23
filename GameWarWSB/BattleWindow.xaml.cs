@@ -24,7 +24,6 @@ namespace GameWarWSB
             this.player = player;
             this.enemy = enemy;
             DisplayCharacterStats();
-            //StartBattle();
         }
         private void StartBattle()
         {
@@ -34,8 +33,8 @@ namespace GameWarWSB
             {
                 if (startingPlayer == 1)
                 {
-                    
                     enemy.HealthPoints -= player.Damage;
+                    startingPlayer = 2;
 
                     if (enemy.HealthPoints <= 0)
                     {
@@ -44,10 +43,10 @@ namespace GameWarWSB
                         MessageBox.Show("Wygrałeś walkę! Zyskałeś poziom i 100 złota.");
                     }
                 }
-                else
+                else if(startingPlayer == 2)
                 {
-                    int enemyDamage = enemy.Damage;
-                    player.HealthPoints -= enemyDamage;
+                    player.HealthPoints -= enemy.Damage;
+                    startingPlayer = 1;
 
                     if (player.HealthPoints <= 0)
                     {
@@ -56,13 +55,20 @@ namespace GameWarWSB
                 }
             }
         }
+            private void FightButton_Click(object sender, RoutedEventArgs e)
+            {
+                StartBattle();
+            }
 
         private void DisplayCharacterStats()
         {
             levelLabel.Content = player.Level.ToString();
             healthPointsLabel.Content = player.HealthPoints.ToString();
             damageLabel.Content = player.Damage.ToString();
-            goldLabel.Content = player.Gold.ToString();
+
+            levelLabelEnemy.Content = enemy.Level.ToString();
+            healthPointsLabelEnemy.Content = enemy.HealthPoints.ToString();
+            damageLabelEnemy.Content = enemy.Damage.ToString();
         }
     }
 }

@@ -8,6 +8,8 @@
         Title="BattleWindow" Height="450" Width="800">
     <Grid>
         <StackPanel Background="Green" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,23,0,0" Height="241" Width="143">
+            <TextBlock Text="Gracz" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold"/>
+            
             <TextBlock Text="Poziom:"/>
             <Label x:Name="levelLabel" FontWeight="Bold" Margin="0 5 0 10"/>
 
@@ -16,11 +18,23 @@
 
             <TextBlock Text="Obrażenia:"/>
             <Label x:Name="damageLabel" FontWeight="Bold" Margin="0 5 0 10"/>
-
-            <TextBlock Text="Złoto:"/>
-            <Label x:Name="goldLabel" FontWeight="Bold" Margin="0 5 0 10"/>
         </StackPanel>
 
+
+        <StackPanel Background="Red" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,23,10,0" Height="241" Width="143">
+            <TextBlock Text="Przeciwnik" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold"/>
+            
+            <TextBlock Text="Poziom:"/>
+            <Label x:Name="levelLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Punkty życia:"/>
+            <Label x:Name="healthPointsLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Obrażenia:"/>
+            <Label x:Name="damageLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
+        </StackPanel>
+
+        <Button Content="Walka!" Width="120" Height="40" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="FightButton_Click" />
 
     </Grid>
 </Window>

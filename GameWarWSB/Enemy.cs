@@ -8,13 +8,18 @@ namespace GameWarWSB
 {
     public class Enemy : ICombatant
     {
+        public int Level { get; set; }
         public int HealthPoints { get; set; }
         public int Damage { get; set; }
 
-        public Enemy(int healthPoints, int damage)
+        public Enemy(Character player, int level = 1, int healthPoints = 10, int damage = 10)
         {
             HealthPoints = healthPoints;
             Damage = damage;
+            Level = level;
+
+            HealthPoints += (player.Level * 3);
+            Damage += (player.Level * 2);
         }
 
         public Enemy()
