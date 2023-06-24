@@ -2,7 +2,10 @@
             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
             WindowStartupLocation="CenterScreen"
-            Title="GameWarWSB" Height="768" Width="1366">
+            Title="GameWarWSB" Height="768" Width="1366"
+            ResizeMode="NoResize"
+        >
+    
 
     <Grid Cursor="Hand">
         <Grid.Background>

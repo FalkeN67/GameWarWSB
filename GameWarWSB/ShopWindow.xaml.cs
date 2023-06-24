@@ -51,5 +51,10 @@ namespace GameWarWSB
         {
             activeWeaponDamage.Content = player.activeWeapon.Damage.ToString();
         }
+
+        private void ShopItemsListView_SelectionChanged_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
