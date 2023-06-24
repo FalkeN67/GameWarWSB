@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="BattleWindow" Height="486" Width="800">
     <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Arena" VerticalAlignment="Top" TextAlignment="Center" FontSize="30" FontWeight="Black" Width="272"/>
         <StackPanel Background="LightGreen" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,23,0,0" Height="381" Width="143">
             <TextBlock Text="Gracz" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold"/>
             
