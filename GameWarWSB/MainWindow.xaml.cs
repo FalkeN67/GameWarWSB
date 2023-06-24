@@ -37,6 +37,12 @@ namespace GameWarWSB
             shopWindow.ShowDialog();
         }
 
+        private void BarracksButton_Click(object sender, RoutedEventArgs e)
+        {
+            BarracksWindow barracksWindow = new BarracksWindow(player);
+            barracksWindow.ShowDialog();
+        }
+
         private void SleepButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Nastał nowy dzień...");

@@ -72,6 +72,11 @@ namespace GameWarWSB
             {
                 Damage += amount;
             }
+
+            public void IncreaseDefense(int amount)
+            {
+                HealthPoints += amount;
+            }
         }
 
      
