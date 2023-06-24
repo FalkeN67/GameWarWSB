@@ -12,8 +12,8 @@ namespace GameWarWSB
             public int HealthPoints { get; set; }
             public int Damage { get; set; }
             public int Gold { get; set; }
-            
             public int gameDay { get; set; }
+
 
             public Weapon activeWeapon { get; set; }
 

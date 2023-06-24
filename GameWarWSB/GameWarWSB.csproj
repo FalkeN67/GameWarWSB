@@ -129,6 +129,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="shop-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="main-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="shop-background .jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="battleWindow-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="button-background.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

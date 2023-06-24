@@ -43,10 +43,10 @@ namespace GameWarWSB
                 string name = weaponName.ToString();    
 
                 int damage = random.Next(10, 20);
-                int requiredLevel = random.Next(50, 100);
-                int cost = random.Next(1, 4);
+                int requiredLevel = random.Next(1, 10);
+                int cost = random.Next(40, 100);
 
-                Weapon newWeapon = new Weapon(name, damage, cost, requiredLevel);
+                Weapon newWeapon = new Weapon(name, cost, requiredLevel, damage);
                 weapons.Add(newWeapon);
             }
         }

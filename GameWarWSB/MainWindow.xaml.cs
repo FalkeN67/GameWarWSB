@@ -49,8 +49,21 @@ namespace GameWarWSB
             MessageBox.Show("Nastał nowy dzień...");
             player.gameDay++;
             enemy.Level++;
-            enemy.HealthPoints += 100;
-            enemy.Damage += 60;
+            
+            Random random1 = new Random();
+
+            enemy.HealthPoints = 10;
+            
+            if(player.HealthPoints < 20)
+            {
+                enemy.HealthPoints = random1.Next(5, 25);
+            }
+            else
+            {
+                enemy.HealthPoints = random1.Next(player.HealthPoints - 20, player.HealthPoints + 20);
+            }
+            
+            enemy.Damage = random1.Next(player.Damage - 20, player.Damage + 20);
 
             Array enemyNames = Enum.GetValues(typeof(Enemy.EnemyName));
             Random random = new Random();

@@ -4,11 +4,15 @@
         Title="Sklep" Height="450" Width="800" Loaded="ShopWindow_Loaded"
         >
     <Grid>
-        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Sklep" VerticalAlignment="Top" TextAlignment="Center" FontSize="30" FontWeight="Black" Width="272"/>
+       
         <StackPanel Orientation="Vertical">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="/shop-background .jpg"/>
+            </StackPanel.Background>
+            <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Sklep" VerticalAlignment="Top" TextAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="White" Width="272"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,10,0" Cursor="Hand">
-                <TextBlock Text="Aktualna ilość gotówki: " />
-                <TextBlock x:Name="GoldTextBlock" />
+                <TextBlock Foreground="White" FontWeight="Bold" Text="Aktualna ilość gotówki: " />
+                <TextBlock Foreground="White" x:Name="GoldTextBlock" />
             </StackPanel>
 
             <ListView  x:Name="ShopItemsListView" Margin="10,30,10,0" SelectionMode="Single">
@@ -23,8 +27,8 @@
             </ListView>
 
             <Button Content="Kup" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Width="80" Height="30" Click="BuyButton_Click" />
-            <TextBlock Text="Obrażenia od aktualnej broni:"/>
-            <Label x:Name="activeWeaponDamage" FontWeight="Bold" Margin="0 5 0 10"/>
+            <TextBlock Foreground="White" FontWeight="Bold" Text="Obrażenia od aktualnej broni:"/>
+            <Label Foreground="White" x:Name="activeWeaponDamage" FontWeight="Bold" Margin="0 5 0 10"/>
         </StackPanel>
     </Grid>
 </Window>
