@@ -34,6 +34,7 @@ namespace GameWarWSB
             healthPointsLabel.Content = character.HealthPoints.ToString();
             damageLabel.Content = character.Damage.ToString();
             goldLabel.Content = character.Gold.ToString();
+            energyLabel.Content = character.Energy.ToString();
         }
     }
 }

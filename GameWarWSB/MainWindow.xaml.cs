@@ -48,7 +48,9 @@ namespace GameWarWSB
         {
             MessageBox.Show("Nastał nowy dzień...");
             player.gameDay++;
+            player.Energy = 3;
             enemy.Level++;
+
             
             Random random1 = new Random();
 
@@ -70,6 +72,20 @@ namespace GameWarWSB
             int randomIndex = random.Next(enemyNames.Length);
             enemy.Name = enemyNames.GetValue(randomIndex).ToString();
 
+        }
+        private void WorkButton_Click(object sender, RoutedEventArgs e)
+        {
+            if(player.Energy > 0)
+            {
+                player.Gold += 40;
+                player.Energy--;
+                MessageBox.Show("Skończono pracę, zarobiłeś 40 złota");
+            }
+            else
+            {
+                MessageBox.Show("Masz za mało energii aby dziś pracować");
+            }
+            
         }
         private void CharacterStatsButton_Click(object sender, RoutedEventArgs e)
         {

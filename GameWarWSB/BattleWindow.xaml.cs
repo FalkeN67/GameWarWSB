@@ -28,38 +28,51 @@ namespace GameWarWSB
         private void StartBattle()
         {
             int startingPlayer = new Random().Next(1, 3);
-
-            while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
-            {
-                if (startingPlayer == 1)
+            
+                while (player.HealthPoints > 0 && enemy.HealthPoints > 0)
                 {
-                    enemy.HealthPoints -= player.Damage;
-                    startingPlayer = 2;
-
-                    if (enemy.HealthPoints <= 0)
+                    if (startingPlayer == 1)
                     {
-                        player.LevelUp();
-                        player.IncreaseGold(100);
-                        MessageBox.Show("Wygrałeś walkę! Zyskałeś poziom i 100 złota.");
+                        enemy.HealthPoints -= player.Damage;
+                        startingPlayer = 2;
+
+                        if (enemy.HealthPoints <= 0)
+                        {
+                            player.LevelUp();
+                            player.IncreaseGold(100);
+                            MessageBox.Show("Wygrałeś walkę! Zyskałeś poziom i 100 złota. -1pkt energii");
+                        }
+                    }
+                    else if (startingPlayer == 2)
+                    {
+                        player.HealthPoints -= enemy.Damage;
+                        startingPlayer = 1;
+
+                        if (player.HealthPoints <= 0)
+                        {
+                            MessageBox.Show("Przegrałeś walkę! -1pkt energii");
+                            player.HealthPoints = 1;
+                            break;
+                        }
                     }
                 }
-                else if(startingPlayer == 2)
-                {
-                    player.HealthPoints -= enemy.Damage;
-                    startingPlayer = 1;
-
-                    if (player.HealthPoints <= 0)
-                    {
-                        MessageBox.Show("Przegrałeś walkę!");
-                        player.HealthPoints = 1;
-                        break;
-                    }
-                }
-            }
+            
+            player.Energy--;
         }
             private void FightButton_Click(object sender, RoutedEventArgs e)
             {
+            if (player.Energy < 1)
+            {
+                MessageBox.Show("Masz za mało energii aby dzisiaj walczyć");
+            }
+            else if(enemy.HealthPoints < 0)
+            {
+                MessageBox.Show("Nie możesz dzisiaj już zawalczyć");
+            }
+            else
+            {
                 StartBattle();
+            }
                 DisplayCharacterStats();
             }
 

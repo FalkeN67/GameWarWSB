@@ -13,8 +13,8 @@ namespace GameWarWSB
             public int Damage { get; set; }
             public int Gold { get; set; }
             public int gameDay { get; set; }
-
-
+            public int Energy { get; set; }
+    
             public Weapon activeWeapon { get; set; }
 
             public Character()
@@ -26,6 +26,7 @@ namespace GameWarWSB
                 Damage = 50;
                 Gold = 50;
                 gameDay = 1;
+                Energy = 3;
             }
 
             public void LevelUp()
