@@ -6,61 +6,70 @@ using System.Threading.Tasks;
 
 namespace GameWarWSB
 {
-    public class Character : ICombatant
-    {
-        public int Level { get; private set; }
-        public int HealthPoints { get; private set; }
-        public int Damage { get; private set; }
-        public int Gold { get; private set; }
-
-        public Character()
+        public class Character : ICombatant
         {
-            Level = 1;
-            HealthPoints = 100;
-            Damage = 10;
-            Gold = 50;
-        }
+            public int Level { get; set; }
+            public int HealthPoints { get; set; }
+            public int Damage { get; set; }
+            public int Gold { get; set; }
+            public int gameDay { get; set; }
+            public int Energy { get; set; }
+    
+            public Weapon activeWeapon { get; set; }
 
-        public void LevelUp()
-        {
-            Level++;
-            HealthPoints = 100;
-            Damage += 5;
-        }
-
-        public void IncreaseGold(int amount)
-        {
-            Gold += amount;
-        }
-
-        public void DecreaseGold(int amount)
-        {
-            Gold -= amount;
-        }
-
-        public void Attack(Enemy enemy)
-        {
-            enemy.TakeDamage(Damage);
-        }
-
-        public void TakeDamage(int damage)
-        {
-            HealthPoints -= damage;
-            if (HealthPoints < 0)
+            public Character()
             {
-                HealthPoints = 0;
+                activeWeapon = new Weapon("Patyk");
+            
+                Level = 1;
+                HealthPoints = 100;
+                Damage = 50;
+                Gold = 50;
+                gameDay = 1;
+                Energy = 3;
+            }
+
+            public void LevelUp()
+            {
+                Level++;
+                HealthPoints += 10;
+                Damage += 15;
+            }
+
+            public void IncreaseGold(int amount)
+            {
+                Gold += amount;
+            }
+
+            public void DecreaseGold(int amount)
+            {
+                Gold -= amount;
+            }
+
+            public void Attack(Enemy enemy)
+            {
+                enemy.TakeDamage(Damage);
+            }
+
+            public void TakeDamage(int damage)
+            {
+                HealthPoints -= damage;
+                if (HealthPoints < 0)
+                {
+                    HealthPoints = 0;
+                }
+            }
+
+            public void IncreaseDamage(int amount)
+            {
+                Damage += amount;
+            }
+
+            public void IncreaseDefense(int amount)
+            {
+                HealthPoints += amount;
             }
         }
 
-        public void RestoreHealth()
-        {
-            HealthPoints = 100;
-        }
-        public void IncreaseDamage(int amount)
-        {
-            Damage += amount;
-        }
-    }
-
      
-}
+    }

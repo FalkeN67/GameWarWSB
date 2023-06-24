@@ -15,16 +15,16 @@ namespace GameWarWSB
 
             this.player = player;
             this.shop = shop;
-
+            DisplayWeaponDamage();
             UpdateShopItems();
         }
 
+
+
         private void UpdateShopItems()
         {
-            // Wyczyszczenie istniejących elementów w ListView
             ShopItemsListView.Items.Clear();
 
-            // Dodanie dostępnych broni ze sklepu do ListView
             foreach (Weapon weapon in shop.GetWeapons())
             {
                 ShopItemsListView.Items.Add(weapon);
@@ -33,13 +33,11 @@ namespace GameWarWSB
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            // Sprawdzenie, czy wybrana broń jest zaznaczona
+
             if (ShopItemsListView.SelectedItem is Weapon selectedWeapon)
             {
-                // Zakup wybranej broni
                 shop.BuyWeapon(player, selectedWeapon);
-
-                // Uaktualnienie dostępnych broni w sklepie
+                player.activeWeapon = selectedWeapon;
                 UpdateShopItems();
             }
         }
@@ -47,6 +45,11 @@ namespace GameWarWSB
         private void ShopWindow_Loaded(object sender, RoutedEventArgs e)
         {
             GoldTextBlock.Text = player.Gold.ToString();
+        }
+
+        private void DisplayWeaponDamage()
+        {
+            activeWeaponDamage.Content = player.activeWeapon.Damage.ToString();
         }
     }
 }

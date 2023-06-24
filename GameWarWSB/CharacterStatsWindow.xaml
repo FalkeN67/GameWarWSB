@@ -1,0 +1,24 @@
+﻿<Window x:Class="GameWarWSB.CharacterStatsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Statystyki postaci" Height="433" Width="200">
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Staty" VerticalAlignment="Top" TextAlignment="Center" FontSize="30" FontWeight="Black" Width="272"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
+            <TextBlock Text="Poziom:"/>
+            <Label x:Name="levelLabel" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Punkty życia:"/>
+            <Label x:Name="healthPointsLabel" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Obrażenia:"/>
+            <Label x:Name="damageLabel" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Złoto:"/>
+            <Label x:Name="goldLabel" FontWeight="Bold" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Energia:"/>
+            <Label x:Name="energyLabel" FontWeight="Bold" Margin="0 5 0 10"/>
+        </StackPanel>
+    </Grid>
+</Window>

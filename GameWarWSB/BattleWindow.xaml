@@ -1,0 +1,63 @@
+﻿<Window x:Class="GameWarWSB.BattleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameWarWSB"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="BattleWindow" Height="768" Width="1366">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/battleWindow-background.jpg"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Arena" VerticalAlignment="Top" TextAlignment="Center" FontSize="30" FontWeight="Black" Width="272"/>
+        <StackPanel Background="LightGreen" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="42,0,0,0" Height="625" Width="240">
+            <TextBlock Text="Gracz" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold" FontSize="40"/>
+
+            <TextBlock Text="Imie:" FontSize="30"/>
+            <Label Content="Bezimienny" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Poziom:" FontSize="30"/>
+            <Label x:Name="levelLabel" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Punkty życia:" FontSize="30"/>
+            <Label x:Name="healthPointsLabel" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Obrażenia:" FontSize="30"/>
+            <Label x:Name="damageLabel" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+        </StackPanel>
+
+
+        <StackPanel Background="IndianRed" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="1082,0,0,0" Height="625" Width="240">
+            <TextBlock Text="Przeciwnik" HorizontalAlignment="Center" Margin="0,10,0,40" FontSize="40" FontWeight="Bold"/>
+
+            <TextBlock Text="Imie:" FontSize="30"/>
+            <Label x:Name="nameLabelEnemy" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Poziom:" FontSize="30"/>
+            <Label x:Name="levelLabelEnemy" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Punkty życia:" FontSize="30"/>
+            <Label x:Name="healthPointsLabelEnemy" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+
+            <TextBlock Text="Obrażenia:" FontSize="30"/>
+            <Label x:Name="damageLabelEnemy" FontWeight="Bold" FontSize="20" Margin="0 5 0 10"/>
+        </StackPanel>
+
+        <Button Content="Walka!" Width="561" Height="76" Margin="0,618,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="FightButton_Click" FontSize="30" FontWeight="Bold" Foreground="White" RenderTransformOrigin="0.5,0.5" >
+            <Button.Background>
+                <ImageBrush ImageSource="/button-background.jpg"/>
+            </Button.Background>
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-8.441"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.968"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+
+    </Grid>
+</Window>

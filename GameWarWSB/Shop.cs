@@ -37,14 +37,16 @@ namespace GameWarWSB
             weapons.Clear();
 
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
-                string name = "Weapon " + (i + 1);
-                int damage = random.Next(10, 20);
-                int cost = random.Next(50, 100);
-                int requiredLevel = random.Next(1, 5);
+                Weapon.WeaponName weaponName = (Weapon.WeaponName)random.Next(Enum.GetValues(typeof(Weapon.WeaponName)).Length);
+                string name = weaponName.ToString();    
 
-                Weapon newWeapon = new Weapon(name, damage, cost, requiredLevel);
+                int damage = random.Next(10, 20);
+                int requiredLevel = random.Next(1, 10);
+                int cost = random.Next(40, 100);
+
+                Weapon newWeapon = new Weapon(name, cost, requiredLevel, damage);
                 weapons.Add(newWeapon);
             }
         }
@@ -56,7 +58,9 @@ namespace GameWarWSB
             if (character.Gold >= weapon.Cost && character.Level >= weapon.RequiredLevel)
             {
                 character.DecreaseGold(weapon.Cost);
-                character.IncreaseDamage(weapon.Damage);
+                character.Damage -= character.activeWeapon.Damage;
+                character.activeWeapon = weapon;
+                character.Damage += character.activeWeapon.Damage;
                 RemoveWeapon(weapon);
             }
             else if (character.Gold <= weapon.Cost)

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace GameWarWSB
 {
-    public interface ICombatant
+    internal interface IItem
     {
-        int HealthPoints { get; }
-        int Damage { get; }
-        void TakeDamage(int damage);
+         string Name { get;}
+         int Cost { get;}
     }
 }

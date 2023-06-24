@@ -1,13 +1,54 @@
 ﻿<Window x:Class="GameWarWSB.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="GameWarWSB" Height="450" Width="800">
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-            <Button Content="Walka" Width="120" Height="40" Margin="0 0 0 10" Click="FightButton_Click" />
-            <Button Content="Sklep" Width="120" Height="40" Margin="0 0 0 10" Click="ShopButton_Click" />
-            <Button Content="Sen" Width="120" Height="40" Margin="0 0 0 10" Click="SleepButton_Click" />
-            <Button Content="Wyjście" Width="120" Height="40" Click="ExitButton_Click" />
+            xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            WindowStartupLocation="CenterScreen"
+            Title="GameWarWSB" Height="768" Width="1366">
+
+    <Grid Cursor="Hand">
+        <Grid.Background>
+            <ImageBrush ImageSource="/main-background.jpg"/>
+        </Grid.Background>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" Text="Lobby" VerticalAlignment="Top" TextAlignment="Center" FontSize="100" FontWeight="Heavy" Foreground="White" Width="446"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,168,0,0">
+            <Button Content="Walka"  Width="320" Height="50" Margin="0 0 0 10" Click="FightButton_Click" FontSize="30" Foreground="White" FontWeight="Heavy" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Sklep"   Width="320" Height="50" Margin="0 0 0 10" Click="ShopButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30"  >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Baraki"  Width="320" Height="50" Margin="0 0 0 10" Click="BarracksButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Praca"  Width="320" Height="50" Margin="0 0 0 10" Click="WorkButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Sen"  Width="320" Height="50" Margin="0 0 0 10" Click="SleepButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Statystyki"  Width="320" Height="50" Margin="0 0 0 10" Click="CharacterStatsButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button Content="Wyjście"  Width="320" Height="50" Margin="0 0 0 10" Click="ExitButton_Click" Foreground="White" FontWeight="Heavy" FontSize="30" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/button-background.jpg"/>
+                </Button.Background>
+            </Button>
         </StackPanel>
+
+
+
+
     </Grid>
 </Window>
