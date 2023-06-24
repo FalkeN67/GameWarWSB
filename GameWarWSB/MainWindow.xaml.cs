@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace GameWarWSB
 {
@@ -16,7 +17,7 @@ namespace GameWarWSB
 
             player = new Character();
             shop = new Shop();
-            enemy = new Enemy(player);
+            enemy = new Enemy(player, "Jack");
 
             shop.AddWeapon(new Weapon("Miecz", 10, 50, 1));
             shop.AddWeapon(new Weapon("Topór", 15, 75, 2));
@@ -50,6 +51,12 @@ namespace GameWarWSB
             enemy.Level++;
             enemy.HealthPoints += 100;
             enemy.Damage += 60;
+
+            Array enemyNames = Enum.GetValues(typeof(Enemy.EnemyName));
+            Random random = new Random();
+            int randomIndex = random.Next(enemyNames.Length);
+            enemy.Name = enemyNames.GetValue(randomIndex).ToString();
+
         }
         private void CharacterStatsButton_Click(object sender, RoutedEventArgs e)
         {

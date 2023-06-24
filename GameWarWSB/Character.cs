@@ -19,20 +19,11 @@ namespace GameWarWSB
 
             public Character()
             {
-                activeWeapon = new Weapon();
+                activeWeapon = new Weapon("Patyk");
             
                 Level = 1;
                 HealthPoints = 100;
-            
-                if (activeWeapon.Damage == 0)
-                {
-                    Damage = 50;
-                }
-                else
-                {
-                    Damage = 50 + activeWeapon.Damage;
-                }
-            
+                Damage = 50;
                 Gold = 50;
                 gameDay = 1;
             }

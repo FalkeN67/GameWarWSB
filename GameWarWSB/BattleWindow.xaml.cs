@@ -51,6 +51,8 @@ namespace GameWarWSB
                     if (player.HealthPoints <= 0)
                     {
                         MessageBox.Show("Przegrałeś walkę!");
+                        player.HealthPoints = 1;
+                        break;
                     }
                 }
             }

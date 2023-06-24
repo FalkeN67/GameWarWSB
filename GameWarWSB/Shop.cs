@@ -58,7 +58,9 @@ namespace GameWarWSB
             if (character.Gold >= weapon.Cost && character.Level >= weapon.RequiredLevel)
             {
                 character.DecreaseGold(weapon.Cost);
-                character.IncreaseDamage(weapon.Damage);
+                character.Damage -= character.activeWeapon.Damage;
+                character.activeWeapon = weapon;
+                character.Damage += character.activeWeapon.Damage;
                 RemoveWeapon(weapon);
             }
             else if (character.Gold <= weapon.Cost)

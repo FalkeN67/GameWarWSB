@@ -13,12 +13,9 @@ namespace GameWarWSB
         public int HealthPoints { get; set; }
         public int Damage { get; set; }
 
-        public Enemy(Character player, int level = 1, int healthPoints = 10, int damage = 10)
+        public Enemy(Character player, string name, int level = 1, int healthPoints = 10, int damage = 10)
         {
-            Random random = new Random();
-            EnemyName[] enemyNames = (EnemyName[])Enum.GetValues(typeof(EnemyName));
-            Name = enemyNames[random.Next(enemyNames.Length)].ToString();
-
+            Name = name;
             HealthPoints = healthPoints;
             Damage = damage;
             Level = level;
@@ -29,10 +26,15 @@ namespace GameWarWSB
         public enum EnemyName
         {
             Bob,
+            Chris,
             Alice,
             John,
+            Dan,
+            Smithy,
+            Andy,
+            Mickey,
             Emma,
-            Tom
+            Tom,
         }
         public void TakeDamage(int damage)
         {

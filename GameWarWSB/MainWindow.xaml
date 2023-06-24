@@ -6,7 +6,6 @@
     
     <Grid>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
-           
             <Button Content="Walka" Width="120" Height="40" Margin="0 0 0 10" Click="FightButton_Click" />
             <Button Content="Sklep" Width="120" Height="40" Margin="0 0 0 10" Click="ShopButton_Click" />
             <Button Content="Baraki" Width="120" Height="40" Margin="0 0 0 10" Click="BarracksButton_Click" />

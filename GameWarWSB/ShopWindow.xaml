@@ -22,6 +22,8 @@
             </ListView>
 
             <Button Content="Kup" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Width="80" Height="30" Click="BuyButton_Click" />
+            <TextBlock Text="Obrażenia od aktualnej broni:"/>
+            <Label x:Name="activeWeaponDamage" FontWeight="Bold" Margin="0 5 0 10"/>
         </StackPanel>
     </Grid>
 </Window>

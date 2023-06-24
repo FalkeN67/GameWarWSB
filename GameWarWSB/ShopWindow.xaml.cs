@@ -15,7 +15,7 @@ namespace GameWarWSB
 
             this.player = player;
             this.shop = shop;
-
+            DisplayWeaponDamage();
             UpdateShopItems();
         }
 
@@ -45,6 +45,11 @@ namespace GameWarWSB
         private void ShopWindow_Loaded(object sender, RoutedEventArgs e)
         {
             GoldTextBlock.Text = player.Gold.ToString();
+        }
+
+        private void DisplayWeaponDamage()
+        {
+            activeWeaponDamage.Content = player.activeWeapon.Damage.ToString();
         }
     }
 }
