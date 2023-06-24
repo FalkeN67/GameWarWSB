@@ -61,6 +61,8 @@
     <Compile Include="CharacterStatsWindow.xaml.cs">
       <DependentUpon>CharacterStatsWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IItem.cs" />
+    <Compile Include="Potion.cs" />
     <Compile Include="Shop.cs" />
     <Compile Include="ShopWindow.xaml.cs">
       <DependentUpon>ShopWindow.xaml</DependentUpon>

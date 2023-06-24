@@ -39,7 +39,9 @@ namespace GameWarWSB
 
             for (int i = 0; i < 6; i++)
             {
-                string name = "Weapon " + (i + 1);
+                Weapon.WeaponName weaponName = (Weapon.WeaponName)random.Next(Enum.GetValues(typeof(Weapon.WeaponName)).Length);
+                string name = weaponName.ToString();    
+
                 int damage = random.Next(10, 20);
                 int requiredLevel = random.Next(50, 100);
                 int cost = random.Next(1, 4);

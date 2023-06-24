@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameWarWSB
 {
-    public class Weapon
+    public class Weapon : IItem
     {
         public string Name { get; private set; }
         public int Damage { get; set; }
@@ -19,6 +19,15 @@ namespace GameWarWSB
             Damage = damage;
             Cost = cost;
             RequiredLevel = requiredLevel;
+        }
+
+        public enum WeaponName
+        {
+            Miecz,
+            Topór,
+            Łuk,
+            Sztylet,
+            Kusza,
         }
     }
 }
