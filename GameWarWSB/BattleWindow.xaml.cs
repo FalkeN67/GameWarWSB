@@ -50,7 +50,7 @@ namespace GameWarWSB
 
                     if (player.HealthPoints <= 0)
                     {
-                        MessageBox.Show("Przegrałeś walkę! Gra zakończona.");
+                        MessageBox.Show("Przegrałeś walkę!");
                     }
                 }
             }
@@ -58,6 +58,7 @@ namespace GameWarWSB
             private void FightButton_Click(object sender, RoutedEventArgs e)
             {
                 StartBattle();
+                DisplayCharacterStats();
             }
 
         private void DisplayCharacterStats()
@@ -66,6 +67,7 @@ namespace GameWarWSB
             healthPointsLabel.Content = player.HealthPoints.ToString();
             damageLabel.Content = player.Damage.ToString();
 
+            nameLabelEnemy.Content = enemy.Name.ToString();
             levelLabelEnemy.Content = enemy.Level.ToString();
             healthPointsLabelEnemy.Content = enemy.HealthPoints.ToString();
             damageLabelEnemy.Content = enemy.Damage.ToString();

@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GameWarWSB"
         mc:Ignorable="d"
-        Title="BattleWindow" Height="450" Width="800">
+        Title="BattleWindow" Height="486" Width="800">
     <Grid>
-        <StackPanel Background="Green" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,23,0,0" Height="241" Width="143">
+        <StackPanel Background="LightGreen" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10,23,0,0" Height="381" Width="143">
             <TextBlock Text="Gracz" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold"/>
             
+            <TextBlock Text="Imie:"/>
+            <Label Content="Bezimienny" FontWeight="Bold" Margin="0 5 0 10"/>
+
             <TextBlock Text="Poziom:"/>
             <Label x:Name="levelLabel" FontWeight="Bold" Margin="0 5 0 10"/>
 
@@ -21,9 +24,12 @@
         </StackPanel>
 
 
-        <StackPanel Background="Red" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,23,10,0" Height="241" Width="143">
+        <StackPanel Background="IndianRed" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,23,10,0" Height="381" Width="143">
             <TextBlock Text="Przeciwnik" HorizontalAlignment="Center" Margin="0,10,0,40" FontWeight="Bold"/>
-            
+
+            <TextBlock Text="Imie:"/>
+            <Label x:Name="nameLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
+
             <TextBlock Text="Poziom:"/>
             <Label x:Name="levelLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
 
@@ -34,7 +40,16 @@
             <Label x:Name="damageLabelEnemy" FontWeight="Bold" Margin="0 5 0 10"/>
         </StackPanel>
 
-        <Button Content="Walka!" Width="120" Height="40" Margin="0,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="FightButton_Click" />
+        <Button Content="Walka!" Width="252" Height="40" Margin="0,384,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Click="FightButton_Click" RenderTransformOrigin="0.5,0.5" >
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-8.441"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-2.968"/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
 
     </Grid>
 </Window>
